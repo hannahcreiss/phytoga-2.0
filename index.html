@@ -217,6 +217,15 @@
     <script src="./lightbox/js/lightbox.js"></script>
 
     <script>
+      //set the height of each puzzle piece
+      $(document).ready(function(){
+        var height = $(window).height() * .5;
+        $('.top-row').css('height', height + 'px')
+        $('.puzzle').each(function(){
+          $(this).css('height', height + 'px')
+        })
+      });
+
       var testimonials = [
         {
           name: "Henry Berkowitz, M.D.",
