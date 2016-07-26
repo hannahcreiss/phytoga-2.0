@@ -1,0 +1,310 @@
+#collage{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+
+.puzzle {
+   background-image:url(../images/collage3.png);
+   /*width:900px;
+   height:auto;*/
+
+}
+
+.piece1 {
+  width:23%;
+  height:300px;
+  background-position:0 -56px;float: left;
+
+}
+
+.piece2 {
+  width:52%;
+  height:300px;
+   background-position:-421px -40px;float: left;
+}
+
+.piece3 {
+  width:25%;
+  height:300px;
+  background-position:-2390px -144px;float: left;
+}
+.piece4 {
+  width:40%;
+  height:300px;
+   background-position:-70px -528px;float: left;
+}
+.piece5 {
+  width:20%;
+  height:300px;
+   background-position:-608px -528px;float: left;
+}
+
+.piece7 {
+  width:40%;
+  height:300px;
+   background-position: -845px -528px;
+  float: left;
+}
+
+img#more {
+  width:80px;
+  height:80px;
+  border-radius:40px;
+}
+
+img#more:hover {
+  cursor:pointer;
+}
+
+#down {
+  width:80px;
+  height:80px;
+  border-radius:40px;
+}
+
+.visible {
+  display:block;
+}
+
+.lead img{
+  background-color: #ffffff;
+}
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+/*html,
+body {
+  height: 100%;
+  background-color: #fff;
+}*/
+body {
+  color: #333;
+  text-align: center;
+}
+
+.row {
+    padding: 5%;
+}
+
+.body-container{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+}
+
+
+p.speech:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 30px;
+  top: 209px;
+  border: 25px solid;
+  border-color: #666 #666 transparent transparent;
+}
+
+p.speech {
+  position: relative;
+  width: 450px;
+  height: 225px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  padding: 5%;
+  font-size: 18px;
+  background-color: #fff;
+  border: 8px solid #666;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+}
+
+p.speech:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 38px;
+  top: 209px;
+  border: 15px solid;
+  border-color: #fff #fff transparent transparent;
+}
+
+.speech span {
+  line-height: 20px;
+}
+
+
+#intro h1 {
+
+
+}
+
+#intro p {
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+div#circles{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width:150px;
+  height:150px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle:hover {
+  background-color: #C6FBCE;
+}
+.circle p{
+  font-size: 14px;
+  padding: 5px;
+
+}
+
+/*#about p {
+  padding: 10px;
+  font-size: 18px;
+}*/
+
+.header{
+  font-size: 64px;
+  font-family: 'TimeBurnerNormal', arial, sans-serif;
+  padding: 20px;
+
+}
+
+#testimonials h2{
+  clear: both;
+}
+
+#speaker {
+  font-family: 'Satisfy', cursive;
+}
+
+#next {
+  border: 2px solid black;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+/*body, html, .top-row {
+     height: 108%;
+}*/
+
+.top-row {
+  display: table;
+  padding-bottom: 10%;
+  padding-top: 15%;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.1);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.1);
+}
+/*.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}*/
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/* Padding for spacing */
+/*.inner {
+  padding: 30px;
+}*/
+
+
+
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+  padding-top: 30%;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.gallery-image {
+  width:100px;
+  height:100px;
+  border-radius:50px;
+}
+
+
+
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    /*position: fixed;
+    bottom: 0;*/
+  }
+  /* Start the vertical centering */
+  /*.site-wrapper-inner {
+    vertical-align: middle;
+  }*/
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
