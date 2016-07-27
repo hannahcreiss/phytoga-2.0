@@ -6,46 +6,65 @@
 }
 
 .puzzle {
-   background-image:url(../images/collage3.png);
+   background-image:url(../images/collage4.png);
    /*width:900px;
    height:auto;*/
 
 }
 
 .piece1 {
-  width:23%;
+  width:50%;
   height:300px;
   background-position:0 -56px;float: left;
 
 }
 
 .piece2 {
-  width:52%;
+  width:0%;
   height:300px;
-   background-position:-421px -40px;float: left;
+  background-position:-288px -40px;float: left;
 }
 
 .piece3 {
-  width:25%;
+  width:50%;
   height:300px;
-  background-position:-2390px -144px;float: left;
+  background-position:-2437px -56px;float: left;
 }
 .piece4 {
-  width:40%;
+  width:0%;
   height:300px;
-   background-position:-70px -528px;float: left;
+   background-position:-3027px -144px;float: left;
 }
+
 .piece5 {
-  width:20%;
+  width:50%;
   height:300px;
-   background-position:-608px -528px;float: left;
+   background-position:-35px -528px;float: left;
 }
 
 .piece7 {
-  width:40%;
+  width:0%;
   height:300px;
-   background-position: -845px -528px;
+   background-position: -408px -528px;
   float: left;
+}
+
+.piece8 {
+  width:0%;
+  height:300px;
+   background-position: -912px -567px;
+  float: left;
+}
+
+.piece9 {
+  width:50%;
+  height:300px;
+   background-position: -1246px -528px;
+  float: left;
+}
+
+#bubble{
+  /*padding-left: 0;*/
 }
 
 img#more {
@@ -130,13 +149,14 @@ p.speech:before {
 
 p.speech {
   position: relative;
-  width: 450px;
+  width: 90%;
   height: 225px;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
   padding: 5%;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #fff;
+  margin: 0 auto;
   border: 8px solid #666;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -160,8 +180,20 @@ p.speech:after {
   line-height: 20px;
 }
 
+#speakerDisplay{
+  margin-top:30px;
+}
 
-#intro h1 {
+#coverBlurb {
+  margin-top: 9%;
+}
+
+
+#coverBlurb h1 {
+text-shadow: 0 5px 5px rgba(0,0,0,.5);
+
+
+
 
 
 }
@@ -188,9 +220,9 @@ div#circles{
   align-items: center;
 }
 
-.circle:hover {
+/*.circle:hover {
   background-color: #C6FBCE;
-}
+}*/
 .circle p{
   font-size: 14px;
   padding: 5px;
@@ -204,7 +236,7 @@ div#circles{
 
 .header{
   font-size: 64px;
-  font-family: 'TimeBurnerNormal', arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   padding: 20px;
 
 }
@@ -215,11 +247,22 @@ div#circles{
 
 #speaker {
   font-family: 'Satisfy', cursive;
+  margin-left: 63%;
+  margin-top: -10px;
+  width: 50%;
+  font-size:20px;
+  padding-right:5%;
 }
 
 #next {
-  border: 2px solid black;
+  border: 2px solid #333333;
 }
+
+#next:hover {
+  color: #DA2244;
+  border: 2px solid #DA2244;
+}
+
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 /*body, html, .top-row {
@@ -228,7 +271,6 @@ div#circles{
 
 .top-row {
   display: table;
-  padding-bottom: 10%;
   padding-top: 15%;
   width: 100%;
   height: 100%; /* For at least Firefox */
@@ -245,6 +287,17 @@ div#circles{
   margin-left: auto;
 }
 
+/*footer {
+  background-color: #777777;
+  width:100%;
+  color: #ffffff;
+  font-size:8px;
+}
+
+footer p{
+  position: absolute;
+  right: 2px;
+}*/
 
 /* Padding for spacing */
 /*.inner {
@@ -271,9 +324,48 @@ div#circles{
   border-radius:50px;
 }
 
+@media (min-width: 498px){
+  .piece1 {
+    width:30%;
+  }
+  .piece3 {
+    width: 40%;
+  }
+
+  .piece4{
+    width:30%;
+  }
+
+  .piece5{
+    width:30%;
+  }
+
+  .piece7{
+    width:40%;
+  }
+
+  .piece9{
+    width:30%
+  }
+}
 
 
+@media (min-width: 587px){
+  p.speech{
+    font-size:18px;
+  }
 
+  #speaker{
+    font-size: 24px;
+    margin-left: 65%;
+  }
+}
+
+@media(min-width: 689px){
+  #coverBlurb{
+    margin-top: 4%;
+  }
+}
 
 /*
  * Affix and center
@@ -285,6 +377,11 @@ div#circles{
     position: fixed;
     top: 0;
   }
+
+  #speaker{
+    font-size: 30px;
+  }
+
   .mastfoot {
     /*position: fixed;
     bottom: 0;*/
@@ -298,6 +395,42 @@ div#circles{
   .mastfoot,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 834px) {
+  .piece1 {
+    width:20%;
+  }
+  .piece2 {
+    width:25%;
+  }
+  .piece3 {
+    width: 35%;
+  }
+
+  .piece4{
+    width:20%;
+  }
+
+  .piece5{
+    width:20%;
+  }
+
+  .piece7{
+    width:35%;
+  }
+
+  .piece8{
+    width:20%;
+  }
+
+  .piece9{
+    width:25%
+  }
+
+  #coverBlurb {
+    margin-top: 0;
   }
 }
 

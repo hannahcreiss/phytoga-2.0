@@ -43,7 +43,7 @@
           src: url("timeburnernormal.ttf") format("truetype");
       }
 
-      h1{
+      #intro h1{
         font-family: "TimeBurnerBold", arial, serif;
         font-size: 84px;
       }
@@ -67,6 +67,9 @@
           <div id="d4" class="puzzle piece4"></div>
           <div id="d5" class="puzzle piece5"></div>
           <div id="d7" class="puzzle piece7"></div>
+          <div id="d8" class="puzzle piece8"></div>
+          <div id="d9" class="puzzle piece9"></div>
+
         </div>
 
         <div id="intro" class="row cover-container">
@@ -94,7 +97,7 @@
     </div>
       <!-- end top row -->
 
-      <div class = "container body-container">
+      <div style="display:none;"class = "container body-container">
 
         <div id="about" class="row text-center">
 
@@ -150,7 +153,7 @@
           <div class="col-xs-12">
             <h2 class="header">Schedule</h2>
             <h4>Small, boutique classes held at integrated healing center in Paoli, PA</h4>
-            <h5>FIRST CLASS FREE!</h5>
+            <h5 style="color:#DA2244"><b>FIRST CLASS FREE!</b></h5>
             <p>Tuesdays - 7:30am, 12pm & 6pm</p>
             <p>Thursdays - 7:30am & 11am</p>
             <p>**Limited space available, please inquire @ csturgis.phytoga@gmail.com or (908) 803-4464**</p>
@@ -164,14 +167,15 @@
           <div class="col-xs-12">
             <h2 id="whosTalking" class="header">Testimonials</h2>
           </div>
-          <div class="col-md-6 text-center">
+          <div id="bubble" class="col-xs-12 text-center">
             <p class="speech"></p>
           </div>
-          <div id="testimonialDisplay" class="col-md-6">
-            <h2 id="speaker"></h2>
+          <div id="speakerDisplay" class="col-xs-12">
             <button id="next" type="button" class="btn btn-default btn-md">
               next >
             </button>
+            <h2 id="speaker"></h2>
+
           </div>
 
         </div>
@@ -191,16 +195,22 @@
         </div>
 
         <div id="bio" class="row">
-          <div class="col-xs-12 col-md-6">
-            <p>Christine Sturgis, mother of five, sports enthusiast and yoga practitioner of 20+ years, has spent the last 10 years developing a career applying two of her greatest passions: helping others and movement. She is a licensed PTA and RYT, trained in SFMA (Selective Functional Movement Assessment) and certified in FMS (Functional Movement Screen), giving her a wide range of knowledge and experience in movement synergies that she is able to pass on to her students/clients.</p>
-            <p>She is an enthusiastic participant in many sports and activities, deeply understanding that efficiency of movement in a balanced exercise program will allow us to actively participate in the activities that we love for many years to come - she is one with you!!</p>
-          </div>
-          <div class="col-xs-12 col-md-6">
+          <div style="float:right" class="col-xs-12 col-md-6">
             <h2 class="header">About the Instructor</h2>
+          </div>
+          <div class="col-xs-12 col-md-6 text-center">
+            <p>Christine Sturgis, mother of five, sports enthusiast and yoga practitioner of 20+ years, has spent the last 10 years developing a career applying two of her greatest passions: helping others and movement. She is a licensed PTA and RYT, trained in SFMA (Selective Functional Movement Assessment) and certified in FMS (Functional Movement Screen),<span style="color:hotpink;"><a href="#">...more</a></span></p>
           </div>
         </div>
 
+
     </div>
+
+    <footer>
+          <div id="cp" class="container text-right">
+              <p>Copyright &copy; Hannah Reiss 2015</p>
+          </div>
+      </footer>
   </div>
 
     <!-- Bootstrap core JavaScript
@@ -217,10 +227,11 @@
     <script src="./lightbox/js/lightbox.js"></script>
 
     <script>
+      var fullBio = "giving her a wide range of knowledge and experience in movement synergies that she is able to pass on to her students/clients.<br />She is an enthusiastic participant in many sports and activities, deeply understanding that efficiency of movement in a balanced exercise program will allow us to actively participate in the activities that we love for many years to come - she is one with you!!"
       //set the height of each puzzle piece
       $(document).ready(function(){
         var height = $(window).height() * .5;
-        $('.top-row').css('height', height + 'px')
+        $('.top-row').css('height', (height) + 'px')
         $('.puzzle').each(function(){
           $(this).css('height', height + 'px')
         })
@@ -276,12 +287,15 @@
       });
 
       $("#more").click(function(){
+        $('.body-container').css('display', 'block');
         $('.piece1').addClass("animated fadeOutLeft");
-        $('.piece4').addClass("animated fadeOutLeft");
-        $('.piece2').addClass("animated fadeOutUp");
-        $('.piece5').addClass("animated fadeOutDown");
-        $('.piece3').addClass("animated fadeOutRight");
-        $('.piece7').addClass("animated fadeOutRight");
+        $('.piece2').addClass("animated fadeOutUpBig");
+        $('.piece3').addClass("animated fadeOutUp");
+        $('.piece4').addClass("animated fadeOutRightBig");
+        $('.piece5').addClass("animated fadeOutLeftBig");
+        $('.piece7').addClass("animated fadeOutDownBig");
+        $('.piece8').addClass("animated fadeOutDown");
+        $('.piece9').addClass("animated fadeOutRight");
         $(this).removeClass("visible").addClass("hidden");
         $('#blurb').fadeIn(1000, function(){
           $("#down").css('display', 'block');
