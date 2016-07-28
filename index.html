@@ -58,6 +58,7 @@
   <body>
 
     <div class="site-wrapper">
+      <div><img id="background" src="images/collage4.png"/></div>
 
       <div class = "top-row container">
         <div id="collage">
@@ -79,7 +80,7 @@
           <a href="images/image-4.jpg" data-lightbox="phytoga-class" data-title="My caption"><img id="pic4" class="gallery-image" src="images/image-4.jpg"/></a>
           <a href="images/image-5.jpg" data-lightbox="phytoga-class" data-title="My caption"><img id="pic5" class="gallery-image" src="images/image-5.jpg"/></a> -->
 
-      <div class="col-xs-12 col-md-10 col-md-offset-1" id="coverBlurb">
+      <div class="col-xs-12" id="coverBlurb" class="landing">
 
            <h1 class="cover-heading" style="color: #ffffff">Phy<span>Toga<span></h1>
 
@@ -149,19 +150,6 @@
           </div>
         </div>
 
-        <div id="schedule" class="row">
-          <div class="col-xs-12">
-            <h2 class="header">Schedule</h2>
-            <h4>Small, boutique classes held at integrated healing center in Paoli, PA</h4>
-            <h5 style="color:#DA2244"><b>FIRST CLASS FREE!</b></h5>
-            <p>Tuesdays - 7:30am, 12pm & 6pm</p>
-            <p>Thursdays - 7:30am & 11am</p>
-            <p>**Limited space available, please inquire @ csturgis.phytoga@gmail.com or (908) 803-4464**</p>
-            <br />
-            <h4>Private sessions available at the Integrated Healing Center or in the privacy of your own home. Questions? See contact info above.</h4>
-          </div>
-        </div>
-
         <div id="testimonials" class="row">
 
           <div class="col-xs-12">
@@ -199,19 +187,39 @@
             <h2 class="header">About the Instructor</h2>
           </div>
           <div class="col-xs-12 col-md-6 text-center">
-            <p>Christine Sturgis, mother of five, sports enthusiast and yoga practitioner of 20+ years, has spent the last 10 years developing a career applying two of her greatest passions: helping others and movement. She is a licensed PTA and RYT, trained in SFMA (Selective Functional Movement Assessment) and certified in FMS (Functional Movement Screen),<span style="color:hotpink;"><a href="#">...more</a></span></p>
+            <p>Christine Sturgis, mother of five, sports enthusiast and yoga practitioner of 20+ years, has spent the last 10 years developing a career applying two of her greatest passions: helping others and movement. She is a licensed PTA and RYT, trained in SFMA (Selective Functional Movement Assessment) and certified in FMS (Functional Movement Screen), giving her a wide range of knowledge and experience in movement synergies that she is able to pass on to her students/clients.</p>
+          </div>
+        </div>
+
+        <div id="schedule" class="row">
+          <div class="col-xs-12">
+            <h2 class="header">Schedule</h2>
+            <h4>Small, boutique classes held at integrated healing center in Paoli, PA</h4>
+            <h5 style="color:#DA2244"><b>FIRST CLASS FREE!</b></h5>
+            <p>Tuesdays - 7:30am, 12pm &amp; 6pm</p>
+            <p>Thursdays - 7:30am &amp; 11am</p>
+            <p>**Limited space available, please inquire at <a href="mailto:csturgis.phytoga@gmail.com">csturgis.phytoga@gmail.com</a> or (908) 803-4464**</p>
+            <br />
+            <h4>Private sessions available at the Integrated Healing Center or in the privacy of your own home. Questions? See contact info above.</h4>
           </div>
         </div>
 
 
+
     </div>
 
-    <footer>
+
+    <!-- <footer style="display:none; font-size:8px;">
           <div id="cp" class="container text-right">
               <p>Copyright &copy; Hannah Reiss 2015</p>
           </div>
-      </footer>
+      </footer> -->
   </div>
+  <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-right">&#169; 2016 Hannah Reiss</p>
+      </div>
+  </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -227,15 +235,25 @@
     <script src="./lightbox/js/lightbox.js"></script>
 
     <script>
-      var fullBio = "giving her a wide range of knowledge and experience in movement synergies that she is able to pass on to her students/clients.<br />She is an enthusiastic participant in many sports and activities, deeply understanding that efficiency of movement in a balanced exercise program will allow us to actively participate in the activities that we love for many years to come - she is one with you!!"
       //set the height of each puzzle piece
       $(document).ready(function(){
-        var height = $(window).height() * .5;
-        $('.top-row').css('height', (height) + 'px')
-        $('.puzzle').each(function(){
-          $(this).css('height', height + 'px')
-        })
+        var height = $(window).height();
+        var width = $(window).width();
+        if (width>=1260){
+          $('#background').css('height', height);
+        }else {
+          $('#collage').css('display', 'block');
+          $('.top-row').css('height', (height) + 'px');
+          $('.puzzle').each(function(){
+            $(this).css('height', (height*.5) + 'px');
+          })
+
+        }
+
+      
       });
+
+
 
       var testimonials = [
         {
@@ -287,21 +305,30 @@
       });
 
       $("#more").click(function(){
-        $('.body-container').css('display', 'block');
-        $('.piece1').addClass("animated fadeOutLeft");
-        $('.piece2').addClass("animated fadeOutUpBig");
-        $('.piece3').addClass("animated fadeOutUp");
-        $('.piece4').addClass("animated fadeOutRightBig");
-        $('.piece5').addClass("animated fadeOutLeftBig");
-        $('.piece7').addClass("animated fadeOutDownBig");
-        $('.piece8').addClass("animated fadeOutDown");
-        $('.piece9').addClass("animated fadeOutRight");
-        $(this).removeClass("visible").addClass("hidden");
-        $('#blurb').fadeIn(1000, function(){
-          $("#down").css('display', 'block');
+        if ($(window).width() >= "1260"){
+          $('#coverBlurb').removeClass("landing")
+          $('#background').addClass("animated flipOutX");
+        } else {
+            $('#collage').css('display', 'block');
+            $('.piece1').addClass("animated fadeOutLeft");
+            $('.piece2').addClass("animated fadeOutUpBig");
+            $('.piece3').addClass("animated fadeOutUp");
+            $('.piece4').addClass("animated fadeOutRightBig");
+            $('.piece5').addClass("animated fadeOutLeftBig");
+            $('.piece7').addClass("animated fadeOutDownBig");
+            $('.piece8').addClass("animated fadeOutDown");
+            $('.piece9').addClass("animated fadeOutRight");
+          }
+          $('.body-container, footer').css('display', 'block');
+          $(this).removeClass("visible").addClass("hidden");
+            $('#blurb').fadeIn(1000, function(){
+              $("#down, footer").css('display', 'block');
+            });
+            $('h1.cover-heading').css({'color': '#333333', 'font-size':'72px'});
+
+
         });
-        $('h1.cover-heading').css({'color': '#333333', 'font-size':'72px'});
-      });
+
 
 
     </script>
