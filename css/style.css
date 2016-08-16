@@ -97,6 +97,10 @@ img#more:hover {
   display:block;
 }
 
+.circle:hover {
+  color: #DA2244;
+}
+
 .lead img{
   background-color: #ffffff;
 }
